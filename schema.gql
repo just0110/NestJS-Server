@@ -1,0 +1,30 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type UserEntity {
+  """Automatically generated id for the user"""
+  userId: String!
+
+  """Unique email of the user"""
+  email: String!
+
+  """One of the enums roles for the user"""
+  role: String!
+}
+
+type Query {
+  users: [UserEntity!]!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): UserEntity!
+}
+
+input CreateUserInput {
+  """Unique email of the user"""
+  email: String!
+
+  """One of the enums roles for the user"""
+  role: String!
+}
