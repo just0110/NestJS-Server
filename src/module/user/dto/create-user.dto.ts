@@ -1,7 +1,7 @@
 import { InputType, Field } from '@nestjs/graphql'
 
 @InputType()
-export class CreateUserInput {
+export class CreateUserDto {
   @Field(() => String, { description: 'Unique email of the user' })
   email: string
 
