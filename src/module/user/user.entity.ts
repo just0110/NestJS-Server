@@ -34,8 +34,16 @@ export class UserEntity {
   surname: string
 
   @Column({ nullable: true })
-  @Field(() => Int, { description: 'Surname of the user', nullable: true })
+  @Field(() => Number, { description: 'Surname of the user', nullable: true })
   age: number
+
+  @Column({ nullable: true })
+  @Field(() => Number, { description: 'Phone of the user', nullable: true })
+  phone: number
+
+  @Column({ nullable: true })
+  @Field(() => String, { description: 'Address of the user', nullable: true })
+  address: string
 
   @Column({ nullable: true })
   @Field(() => String, {

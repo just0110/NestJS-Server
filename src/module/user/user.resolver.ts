@@ -40,7 +40,7 @@ export class UserResolver {
     createReadStream()
       .pipe(createWriteStream(filePath))
       .on('finish', () => {
-        // Upload to bucket
+        // Add Logger -> Image loaded!
       })
       .on('error', (error) => console.log('ERROR!: ', error))
 

@@ -36,7 +36,7 @@ export class ItemResolver {
     createReadStream()
       .pipe(createWriteStream(filePath))
       .on('finish', () => {
-        // Upload to bucket
+        // Upload to bucket -> Add to Logger
       })
       .on('error', (error) => console.log('ERROR!: ', error))
 
@@ -60,7 +60,7 @@ export class ItemResolver {
       .on('finish', () => {
         // Upload to bucket
       })
-      .on('error', (error) => console.log('ERROR!: ', error))
+      .on('error', (error) => new ErrorEvent('Item image Loading', error))
 
     return this.itemService.update({ ...updateItemInput, image: filePath })
   }
