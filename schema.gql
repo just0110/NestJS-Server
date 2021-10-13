@@ -22,7 +22,13 @@ type UserEntity {
   surname: String
 
   """Surname of the user"""
-  age: Int
+  age: Float
+
+  """Phone of the user"""
+  phone: Float
+
+  """Address of the user"""
+  address: String
 
   """Image for the item"""
   image: String
@@ -61,10 +67,10 @@ type Query {
 
 type Mutation {
   createUser(createUserInput: CreateUserInput!): UserEntity!
-  updateUser(createUserInput: UpdateUserInput!): UserEntity!
-  removeUser(userId: String!): UserEntity!
-  createItem(image: Upload!, createItemInput: CreateItemInput!): ItemEntity!
-  updateItem(image: Upload!, updateItemInput: UpdateItemInput!): ItemEntity!
+  updateUser(image: Upload, createUserInput: UpdateUserInput!): UserEntity!
+  removeUser(userId: String!): String!
+  createItem(image: Upload, createItemInput: CreateItemInput!): ItemEntity!
+  updateItem(image: Upload, updateItemInput: UpdateItemInput!): ItemEntity!
   removeItem(itemId: String!): String!
 }
 
@@ -76,6 +82,9 @@ input CreateUserInput {
   password: String!
 }
 
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
 input UpdateUserInput {
   """Unique email of the user"""
   email: String
@@ -84,12 +93,27 @@ input UpdateUserInput {
   password: String
   userId: String!
 
-  """Image for the user"""
-  image: String!
-}
+  """Description for the user"""
+  description: String
 
-"""The `Upload` scalar type represents a file upload."""
-scalar Upload
+  """Name of the user"""
+  name: String
+
+  """Surname of the user"""
+  surname: String
+
+  """Surname of the user"""
+  age: Float
+
+  """Phone of the user"""
+  phone: Float
+
+  """Address of the user"""
+  address: String
+
+  """Image for the user"""
+  image: String
+}
 
 input CreateItemInput {
   """Title for the item"""

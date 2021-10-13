@@ -7,4 +7,5 @@ export class CreateUserInput {
 
   @Field(() => String, { description: 'Password of the user' })
   password: string
+
 }
